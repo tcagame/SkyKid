@@ -4,6 +4,7 @@
 #include <string>
 
 PTR( Game )
+
 class Game : public Task {
 public:
 	static std::string getTag( ) { return "GAME"; }
