@@ -1,5 +1,5 @@
 #include "Sound.h"
 
 void main( ) {
-	‚¤‚¿‚¾
+	‚¤‚¿‚¾;
 }
