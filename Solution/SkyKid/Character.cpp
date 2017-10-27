@@ -1,9 +1,11 @@
 #include "Character.h"
 
 
-Character::Character( ) {
+Character::Character( const Vector& pos, const int chip_size ) {
 }
 
 
 Character::~Character( ) {
 }
+
+
