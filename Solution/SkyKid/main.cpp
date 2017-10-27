@@ -1,7 +1,5 @@
-#include "Sound.h"
+#include "Application.h"
 
 void main( ) {
-	チョウキゴウ
-	うちだ;
-	ゴコウ
+
 }
