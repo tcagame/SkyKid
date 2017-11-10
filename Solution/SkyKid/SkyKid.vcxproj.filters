@@ -34,6 +34,9 @@
     <ClCompile Include="EnemyAnitTank.cpp">
       <Filter>Character\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyTruck.cpp">
+      <Filter>Character\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
@@ -81,6 +84,9 @@
       <Filter>Character\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="EnemyAnitTank.h">
+      <Filter>Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyTruck.h">
       <Filter>Character\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
