@@ -11,7 +11,22 @@
       <Filter>Character</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
+      <Filter>Character\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Character\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyFighter.cpp">
+      <Filter>Character\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBomber.cpp">
+      <Filter>Character\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Military.cpp">
       <Filter>Character</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyParachute.cpp">
+      <Filter>Character\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -20,6 +35,12 @@
     </Filter>
     <Filter Include="Character">
       <UniqueIdentifier>{01613e0e-702d-446d-9994-b0e7528c1bf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character\Enemy">
+      <UniqueIdentifier>{a6a97cbc-2508-4307-bc43-f8d9875d1216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character\Player">
+      <UniqueIdentifier>{205a3fab-4225-4a43-a0c8-ea35ea8bee0c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -33,7 +54,22 @@
       <Filter>Character</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>Character\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyFighter.h">
+      <Filter>Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBomber.h">
+      <Filter>Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Military.h">
       <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyParachute.h">
+      <Filter>Character\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
