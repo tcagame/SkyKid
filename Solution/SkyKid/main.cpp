@@ -2,6 +2,7 @@
 #include "Keyboard.h"
 #include "Device.h"
 #include "Game.h"
+#include "Character.h"
 
 void main( ) {
 	ApplicationPtr app = Application::getInstance( );

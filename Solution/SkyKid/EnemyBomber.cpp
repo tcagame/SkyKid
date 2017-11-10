@@ -10,3 +10,6 @@ Enemy( START_POS, NORMAL_CHIP_SIZE ) {
 
 EnemyBomber::~EnemyBomber( ) {
 }
+
+void EnemyBomber::act( ) {
+}

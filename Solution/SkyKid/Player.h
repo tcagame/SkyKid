@@ -1,19 +1,23 @@
 #pragma once
 #include "Character.h"
+#include "smart_ptr.h"
+
+PTR( Image ); 
 
 class Player : public Character {
 public:
 	Player( );
 	virtual ~Player( );
-public:
-	void act( );
+
 private:
 	enum ACTION {
-		ACTION_MOVE,
-		ACTION_ATTACK,
-
+		ACTION_MOVE
 	};
 private:
+	void act( );
 	void actOnMoving( );
+	void draw( );
+private:
+	ImagePtr _image;
 };
 

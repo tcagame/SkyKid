@@ -10,3 +10,5 @@ Character( pos, chip_size ) {
 Enemy::~Enemy( ) {
 }
 
+void Enemy::act( ) {
+}

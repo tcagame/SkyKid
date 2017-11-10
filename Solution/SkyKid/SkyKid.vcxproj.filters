@@ -28,6 +28,12 @@
     <ClCompile Include="EnemyParachute.cpp">
       <Filter>Character\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyGunShot.cpp">
+      <Filter>Character\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyAnitTank.cpp">
+      <Filter>Character\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
@@ -69,6 +75,12 @@
       <Filter>Character</Filter>
     </ClInclude>
     <ClInclude Include="EnemyParachute.h">
+      <Filter>Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyGunShot.h">
+      <Filter>Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyAnitTank.h">
       <Filter>Character\Enemy</Filter>
     </ClInclude>
   </ItemGroup>

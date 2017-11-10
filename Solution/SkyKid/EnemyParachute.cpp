@@ -9,3 +9,6 @@ Enemy( START_POS, NORMAL_CHIP_SIZE ) {
 
 EnemyParachute::~EnemyParachute( ) {
 }
+
+void EnemyParachute::act( ) {
+}
