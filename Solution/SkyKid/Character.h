@@ -7,6 +7,8 @@ public:
 	virtual ~Character( );
 public:
 	Vector getPos( );
+	void setPos( Vector pos );
+	Vector getVec( );
 	void setVec( Vector vec );
 	void update( );
 	void move( );

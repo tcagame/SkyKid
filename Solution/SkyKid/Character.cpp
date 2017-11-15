@@ -15,6 +15,14 @@ Vector Character::getPos( ) {
 	return _pos;
 }
 
+void Character::setPos( Vector pos ) {
+	_pos = pos;
+}
+
+Vector Character::getVec( ) {
+	return _vec;
+}
+
 void Character::setVec( Vector vec ) {
 	_vec = vec; 
 }
