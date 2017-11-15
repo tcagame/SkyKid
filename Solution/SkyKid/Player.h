@@ -10,14 +10,23 @@ public:
 	virtual ~Player( );
 
 private:
-	enum ACTION {
-		ACTION_MOVE
+	enum MOVE {
+		MOVE_WAIT,
+		MOVE_RIGHT,
+		MOVE_LEFT,
+		MOVE_UP,
+		MOVE_DOWN,
 	};
 private:
 	void act( );
-	void actOnMoving( );
 	void draw( );
+	void updateMove( );
+	void moveLeft( );
+	void moveRight( );
+	void moveUp( );
+	void moveDown( );
 private:
 	ImagePtr _image;
+	MOVE _move;	
 };
 

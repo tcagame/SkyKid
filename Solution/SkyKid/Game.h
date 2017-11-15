@@ -4,6 +4,7 @@
 #include <string>
 
 PTR( Game )
+PTR( Player )
 
 class Game : public Task {
 public:
@@ -14,5 +15,7 @@ public:
 public:
 	void update( );
 	void initialize( );
+private:
+	PlayerPtr _player;
 };
 

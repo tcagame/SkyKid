@@ -1,5 +1,7 @@
 #include "Game.h"
 #include "Application.h"
+#include "Player.h"
+#include "Drawer.h"
 
 GamePtr Game::getTask( ) {
 	ApplicationPtr app = Application::getInstance( );
@@ -14,9 +16,11 @@ Game::~Game( ) {
 }
 
 void Game::update( ) {
-	
+	Drawer::getTask( )->flip( );
+	_player->update( );
 }
 	
 
 void Game::initialize( ) {
+	_player = PlayerPtr( new Player( ) );
 }

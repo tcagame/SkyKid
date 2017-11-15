@@ -6,6 +6,14 @@ public:
 	Character( const Vector& pos, const int chip_size );
 	virtual ~Character( );
 public:
-	virtual void act( ); 
+	Vector getPos( );
+	void setVec( Vector vec );
+	void update( );
+	void move( );
+private:
+	virtual void act( ) = 0;
+private:
+	Vector _pos;
+	Vector _vec;
 };
 
