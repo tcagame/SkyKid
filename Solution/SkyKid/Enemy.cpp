@@ -11,9 +11,9 @@ Enemy::~Enemy( ) {
 }
 
 void Enemy::act( ) {
-	if( isOverlapped( ) ) {
-
-	}
+	//if( isOverlapped( ) ) {
+	//
+	//}
 }
 
 bool Enemy::isOverlapped( CharacterPtr target ) const {

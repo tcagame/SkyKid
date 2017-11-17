@@ -57,6 +57,9 @@ void Player::actOnMove( ) {
 		vec += Vector( 0, -MOVE_SPEED );
 		_tx = 2;
 	}
+	if ( device->getPush(  ) ) {
+		_action = ACTION_SOMERSAULT;
+	}
 
 	setVec( vec.normalize( ) * MOVE_SPEED );
 }
