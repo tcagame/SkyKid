@@ -5,6 +5,7 @@
 
 PTR( Game )
 PTR( Player )
+PTR( EnemyFighter )
 
 class Game : public Task {
 public:
@@ -17,5 +18,6 @@ public:
 	void initialize( );
 private:
 	PlayerPtr _player;
+	EnemyFighterPtr _fighter;
 };
 

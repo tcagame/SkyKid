@@ -1,5 +1,8 @@
 #pragma once
 #include "Character.h"
+#include "smart_ptr.h"
+
+PTR( Character );
 
 class Enemy : public Character {
 public:
@@ -7,5 +10,7 @@ public:
 	virtual ~Enemy( );
 private:
 	void act( );
+public:
+	bool Enemy::isOverlapped( CharacterPtr target ) const;
 };
 

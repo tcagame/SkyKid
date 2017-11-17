@@ -4,7 +4,7 @@
 #include "Image.h"
 #include "Device.h"
 
-const int MOVE_SPEED = 5;
+const int MOVE_SPEED = 8;
 
 Player::Player( ) :
 Character( START_POS, NORMAL_CHIP_SIZE ),

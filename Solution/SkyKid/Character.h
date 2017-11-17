@@ -12,9 +12,12 @@ public:
 	void setVec( Vector vec );
 	void update( );
 	void move( );
+	double getOverlappedRadius( ) const;
+	Vector getOverlappedPos( ) const;
 private:
 	virtual void act( ) = 0;
 private:
+	int _chip_size;
 	Vector _pos;
 	Vector _vec;
 };

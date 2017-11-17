@@ -3,7 +3,8 @@
 
 Character::Character( const Vector& pos, const int chip_size ) :
 _pos( pos ),
-_vec( Vector( 0, 0 ) ) {
+_vec( Vector( 0, 0 ) ),
+_chip_size( chip_size ){
 
 }
 
@@ -34,4 +35,12 @@ void Character::update( ) {
 
 void Character::move( ) {
 	_pos += _vec;
+}
+
+double Character::getOverlappedRadius( ) const {
+	return _chip_size / 2 * 0.8;
+}
+
+Vector Character::getOverlappedPos( ) const {
+	return Vector( _pos.x, _pos.y  - _chip_size / 2 );
 }

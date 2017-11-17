@@ -3,7 +3,7 @@
 
 
 EnemyTruck::EnemyTruck( const Vector &pos, const int chip_size ) :
-Enemy( START_POS, NORMAL_CHIP_SIZE ) {
+Enemy( pos, NORMAL_CHIP_SIZE ) {
 }
 
 

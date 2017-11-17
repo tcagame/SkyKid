@@ -11,4 +11,14 @@ Enemy::~Enemy( ) {
 }
 
 void Enemy::act( ) {
+	if( isOverlapped( ) ) {
+
+	}
 }
+
+bool Enemy::isOverlapped( CharacterPtr target ) const {
+	Vector vec = getOverlappedPos( ) - target->getOverlappedPos( );
+	double radius = getOverlappedRadius( ) + target->getOverlappedRadius( );
+	return vec.getLength( ) < radius;
+}
+
