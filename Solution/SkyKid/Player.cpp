@@ -57,7 +57,12 @@ void Player::actOnMove( ) {
 		vec += Vector( 0, -MOVE_SPEED );
 		_tx = 2;
 	}
-	if ( device->getPush(  ) ) {
+
+	if ( device->getPush( ) == BUTTON_A ) {
+		_action = ACTION_ATTACK;
+	}
+
+	if ( device->getPush( ) == BUTTON_B ) {
 		_action = ACTION_SOMERSAULT;
 	}
 
@@ -65,5 +70,9 @@ void Player::actOnMove( ) {
 }
 
 void Player::actOnSomersault( ) {
+	setVec( Vector( 0,-10 ));
+}
 
+void Player::actOnAttack( ) {
+	
 }
