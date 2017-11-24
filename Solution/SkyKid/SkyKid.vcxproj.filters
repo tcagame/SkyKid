@@ -37,6 +37,12 @@
     <ClCompile Include="EnemyTruck.cpp">
       <Filter>Character\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyMiniBalloon.cpp">
+      <Filter>Character\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyInterceptionBalloon.cpp">
+      <Filter>Character\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
@@ -87,6 +93,12 @@
       <Filter>Character\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="EnemyTruck.h">
+      <Filter>Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyMiniBalloon.h">
+      <Filter>Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyInterceptionBalloon.h">
       <Filter>Character\Enemy</Filter>
     </ClInclude>
   </ItemGroup>

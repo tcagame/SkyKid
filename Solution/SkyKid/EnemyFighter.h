@@ -14,5 +14,7 @@ private:
 private:
 	ImagePtr _image;
 	int _tx;
+	Vector _vec;
+	double _angle;
 };
 

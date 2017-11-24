@@ -10,7 +10,7 @@ Player::Player( ) :
 Character( START_POS, NORMAL_CHIP_SIZE ),
 _tx( 6 ) {
 	DrawerPtr drawer = Drawer::getTask( );
-	_image = drawer->createImage( "skykid.png" );
+	_image = drawer->createImage( "player.png" );
 }
 
 
@@ -30,7 +30,7 @@ void Player::act( ) {
 }
 
 void Player::draw( ) {
-	_image->setRect( NORMAL_CHIP_SIZE * _tx, 0, NORMAL_CHIP_SIZE, NORMAL_CHIP_SIZE );
+	_image->setRect( NORMAL_CHIP_SIZE * _tx, 64, NORMAL_CHIP_SIZE, NORMAL_CHIP_SIZE );
 	_image->setPos( ( int )getPos( ).x, ( int )getPos( ).y );
 	_image->draw( );
 }

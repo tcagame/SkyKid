@@ -164,6 +164,8 @@
     <ClCompile Include="EnemyBomber.cpp" />
     <ClCompile Include="EnemyFighter.cpp" />
     <ClCompile Include="EnemyGunShot.cpp" />
+    <ClCompile Include="EnemyInterceptionBalloon.cpp" />
+    <ClCompile Include="EnemyMiniBalloon.cpp" />
     <ClCompile Include="EnemyParachute.cpp" />
     <ClCompile Include="EnemyTruck.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -184,6 +186,8 @@
     <ClInclude Include="EnemyBomber.h" />
     <ClInclude Include="EnemyFighter.h" />
     <ClInclude Include="EnemyGunShot.h" />
+    <ClInclude Include="EnemyInterceptionBalloon.h" />
+    <ClInclude Include="EnemyMiniBalloon.h" />
     <ClInclude Include="EnemyParachute.h" />
     <ClInclude Include="EnemyTruck.h" />
     <ClInclude Include="Game.h" />
