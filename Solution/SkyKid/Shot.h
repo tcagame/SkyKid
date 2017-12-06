@@ -9,12 +9,12 @@ public:
 	Shot( const Vector &pos );
 	virtual ~Shot( );
 public:
-	void act( );
+	void update( );
 private:
 	void draw( );
 private:
 	ImagePtr _image;
-	int _tx;
 	Vector _vec;
+	int _tx;
 };
 

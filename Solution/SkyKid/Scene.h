@@ -1,7 +1,6 @@
 #pragma once
 #include "smart_ptr.h"
 
-
 class Scene {
 public:
 	Scene( );

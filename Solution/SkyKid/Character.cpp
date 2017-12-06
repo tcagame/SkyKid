@@ -5,7 +5,7 @@
 Character::Character( const Vector& pos, const int chip_size ) :
 _pos( pos ),
 _vec( Vector( 0, 0 ) ),
-_chip_size( chip_size ){
+_chip_size( chip_size ) {
 
 }
 

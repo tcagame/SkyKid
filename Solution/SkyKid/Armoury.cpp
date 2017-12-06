@@ -18,7 +18,7 @@ void Armoury::update( ) {
 	std::list<ShotPtr>::iterator ite = _shots.begin( );
 	while ( ite != _shots.end( ) ) {
 		ShotPtr shot = *ite;
-		shot->act( );
+		shot->update( );
 		std::list<EnemyPtr>::iterator _enemy_ite = _enemies.begin( );
 		while ( _enemy_ite != _enemies.end( ) ) {
 			EnemyPtr enemy = *_enemy_ite;

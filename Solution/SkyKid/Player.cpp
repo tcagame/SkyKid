@@ -74,7 +74,7 @@ void Player::actOnMove( ) {
 }
 
 void Player::actOnSomersault( ) {
-	setVec( Vector( 0,-10 ));
+	setVec( Vector( 0, -10 ) );
 }
 
 void Player::setArmoury( ArmouryPtr armoury ) {
@@ -84,4 +84,5 @@ void Player::setArmoury( ArmouryPtr armoury ) {
 
 void Player::actOnAttack( ) {
 	_armoury->addShot( ShotPtr( new Shot( Vector( getPos( ).x, getPos( ).y ) ) ) );
+	_action = ACTION_MOVE; 
 }
