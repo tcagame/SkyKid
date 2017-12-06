@@ -37,6 +37,6 @@ void Military::addEnemy( EnemyPtr enemy ) {
 	_enemies.push_back( enemy );
 }
 
-void Military::draw( ) const {
-	
+std::list<EnemyPtr> Military::getEnemyList( ) const {
+	return _enemies;
 }

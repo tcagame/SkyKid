@@ -6,10 +6,11 @@ PTR( Image );
 
 class Shot : public Character {
 public:
-	Shot( const Vector pos );
+	Shot( const Vector &pos );
 	virtual ~Shot( );
-private:
+public:
 	void act( );
+private:
 	void draw( );
 private:
 	ImagePtr _image;

@@ -4,6 +4,8 @@
 
 PTR( Image ); 
 PTR( Shot );
+PTR( Enemy );
+PTR( Armoury );
 
 class Player : public Character {
 public:
@@ -15,6 +17,8 @@ private:
 		ACTION_SOMERSAULT,
 		ACTION_ATTACK
 	};
+public:
+	void setArmoury( ArmouryPtr armoury );
 private:
 	void act( );
 	void draw( );
@@ -22,9 +26,10 @@ private:
 	void actOnSomersault( );
 	void actOnAttack( );
 private:
-	ImagePtr _image;
-	ACTION _action;	
 	int _tx;
-	ShotPtr _shot;
+	ACTION _action;	
+	ImagePtr _image;
+	ArmouryPtr _armoury;
+	EnemyPtr _enemy;
 };
 

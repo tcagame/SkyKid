@@ -4,6 +4,7 @@
 #include "Image.h"
 #include "Device.h"
 #include "Shot.h"
+#include "Armoury.h"
 
 const int MOVE_SPEED = 8;
 
@@ -76,6 +77,11 @@ void Player::actOnSomersault( ) {
 	setVec( Vector( 0,-10 ));
 }
 
+void Player::setArmoury( ArmouryPtr armoury ) {
+	_armoury = armoury;
+}
+
+
 void Player::actOnAttack( ) {
-	_shot = ShotPtr( new Shot( Vector( getPos( ).x, getPos( ).y ) ) );
+	_armoury->addShot( ShotPtr( new Shot( Vector( getPos( ).x, getPos( ).y ) ) ) );
 }

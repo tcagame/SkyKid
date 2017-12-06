@@ -22,9 +22,6 @@
     <ClCompile Include="EnemyBomber.cpp">
       <Filter>Character\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="Military.cpp">
-      <Filter>Character</Filter>
-    </ClCompile>
     <ClCompile Include="EnemyParachute.cpp">
       <Filter>Character\Enemy</Filter>
     </ClCompile>
@@ -51,6 +48,12 @@
     </ClCompile>
     <ClCompile Include="SceneMap.cpp">
       <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Armoury.cpp">
+      <Filter>Character\shot</Filter>
+    </ClCompile>
+    <ClCompile Include="Military.cpp">
+      <Filter>Character\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,9 +98,6 @@
     <ClInclude Include="EnemyBomber.h">
       <Filter>Character\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="Military.h">
-      <Filter>Character</Filter>
-    </ClInclude>
     <ClInclude Include="EnemyParachute.h">
       <Filter>Character\Enemy</Filter>
     </ClInclude>
@@ -124,6 +124,12 @@
     </ClInclude>
     <ClInclude Include="SceneMap.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Armoury.h">
+      <Filter>Character\shot</Filter>
+    </ClInclude>
+    <ClInclude Include="Military.h">
+      <Filter>Character\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

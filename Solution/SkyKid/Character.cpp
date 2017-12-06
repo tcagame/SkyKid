@@ -1,4 +1,5 @@
 #include "Character.h"
+#include "Enemy.h"
 
 
 Character::Character( const Vector& pos, const int chip_size ) :
@@ -48,5 +49,11 @@ Vector Character::getOverlappedPos( ) const {
 bool Character::isOverlapped( CharacterPtr target ) const {
 	Vector vec = getOverlappedPos( ) - target->getOverlappedPos( );
 	double radius = getOverlappedRadius( ) + target->getOverlappedRadius( );
+	return vec.getLength( ) < radius;
+}
+
+bool Character::isOverlapped( EnemyPtr enemy ) const {
+	Vector vec = getOverlappedPos( ) - enemy->getOverlappedPos( );
+	double radius = getOverlappedRadius( ) + enemy->getOverlappedRadius( );
 	return vec.getLength( ) < radius;
 }

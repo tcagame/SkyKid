@@ -3,6 +3,7 @@
 #include "smart_ptr.h"
 
 PTR( Character );
+PTR( Enemy );
 
 class Character {
 public:
@@ -18,6 +19,7 @@ public:
 	double getOverlappedRadius( ) const;
 	Vector getOverlappedPos( ) const;
 	bool isOverlapped( CharacterPtr target ) const;
+	bool isOverlapped( EnemyPtr enemy ) const;
 private:
 	virtual void act( ) = 0;
 private:
