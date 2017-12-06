@@ -172,6 +172,9 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Military.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneMap.cpp" />
+    <ClCompile Include="Shot.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Framework2017ver2\Framework2017Ver2.vcxproj">
@@ -193,6 +196,9 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Military.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneMap.h" />
+    <ClInclude Include="Shot.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,8 @@
 #pragma once
 #include "mathmatics.h"
+#include "smart_ptr.h"
+
+PTR( Character );
 
 class Character {
 public:
@@ -14,6 +17,7 @@ public:
 	void move( );
 	double getOverlappedRadius( ) const;
 	Vector getOverlappedPos( ) const;
+	bool isOverlapped( CharacterPtr target ) const;
 private:
 	virtual void act( ) = 0;
 private:

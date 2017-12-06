@@ -3,11 +3,12 @@
 #include <list>
 
 PTR( Enemy );
+PTR( Player );
 PTR( Image );
 
 class Military {
 public:
-	Military( );
+	Military( PlayerPtr player );
 	virtual ~Military( );
 public:
 	void update( );
@@ -15,6 +16,7 @@ public:
 	void draw( ) const;
 private:
 	ImagePtr _image;
-	std::list< EnemyPtr > _enemis;
+	std::list< EnemyPtr > _enemies;
+	PlayerPtr _player;
 };
 

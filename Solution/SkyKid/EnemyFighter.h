@@ -1,7 +1,8 @@
 #pragma once
 #include "Enemy.h"
 #include "smart_ptr.h"
-PTR( Image )
+
+PTR( Image );
 
 //í“¬‹@
 class EnemyFighter : public Enemy {

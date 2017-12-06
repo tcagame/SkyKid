@@ -3,12 +3,8 @@
 #include "Task.h"
 #include <string>
 
-PTR( Game )
-PTR( Player )
-PTR( EnemyFighter )
-PTR( EnemyAnitTank )
-PTR( EnemyMiniBalloon )
-PTR( EnemyInterceptionBalloon )
+PTR( Game );
+PTR( Scene );
 
 class Game : public Task {
 public:
@@ -20,10 +16,6 @@ public:
 	void update( );
 	void initialize( );
 private:
-	PlayerPtr _player;
-	EnemyFighterPtr _fighter;
-	EnemyAnitTankPtr _anit_tank;
-	EnemyMiniBalloonPtr _mini_balloon;
-	EnemyInterceptionBalloonPtr _interception_balloon;
+	ScenePtr _scene;
 };
 

@@ -3,6 +3,7 @@
 #include "Drawer.h"
 #include "Image.h"
 #include "Device.h"
+#include "Shot.h"
 
 const int MOVE_SPEED = 8;
 
@@ -25,6 +26,8 @@ void Player::act( ) {
 	case ACTION_SOMERSAULT:
 		actOnSomersault( );
 		break;
+	case ACTION_ATTACK:
+		actOnAttack( );
 	}
 	draw( );
 }
@@ -74,5 +77,5 @@ void Player::actOnSomersault( ) {
 }
 
 void Player::actOnAttack( ) {
-	
+	_shot = ShotPtr( new Shot( Vector( getPos( ).x, getPos( ).y ) ) );
 }

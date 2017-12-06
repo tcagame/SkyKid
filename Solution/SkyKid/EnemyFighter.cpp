@@ -2,7 +2,7 @@
 #include "define.h"
 #include "Drawer.h"
 #include "Image.h"
-#include <math.h>
+
 
 const int MOVE_SPEED = 10;
 const int ROT_R =10;

@@ -1,8 +1,7 @@
 #pragma once
 #include "Enemy.h"
 
-
-PTR( Image )
+PTR( Image );
 
 //íÔ
 class EnemyAnitTank : public Enemy {

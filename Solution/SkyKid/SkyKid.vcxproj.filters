@@ -43,6 +43,15 @@
     <ClCompile Include="EnemyInterceptionBalloon.cpp">
       <Filter>Character\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="Shot.cpp">
+      <Filter>Character\shot</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMap.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
@@ -56,6 +65,12 @@
     </Filter>
     <Filter Include="Character\Player">
       <UniqueIdentifier>{205a3fab-4225-4a43-a0c8-ea35ea8bee0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character\shot">
+      <UniqueIdentifier>{41833a90-5f46-4cf5-8693-10aa9e2ef47d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{9f4b8ef0-8245-4bd3-b7db-8ddf972e9e9f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +115,15 @@
     </ClInclude>
     <ClInclude Include="EnemyInterceptionBalloon.h">
       <Filter>Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Shot.h">
+      <Filter>Character\shot</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMap.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

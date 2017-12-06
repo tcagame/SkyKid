@@ -44,3 +44,9 @@ double Character::getOverlappedRadius( ) const {
 Vector Character::getOverlappedPos( ) const {
 	return Vector( _pos.x, _pos.y  - _chip_size / 2 );
 }
+
+bool Character::isOverlapped( CharacterPtr target ) const {
+	Vector vec = getOverlappedPos( ) - target->getOverlappedPos( );
+	double radius = getOverlappedRadius( ) + target->getOverlappedRadius( );
+	return vec.getLength( ) < radius;
+}
