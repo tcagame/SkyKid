@@ -19,14 +19,9 @@ void Armoury::update( ) {
 	while ( ite != _shots.end( ) ) {
 		ShotPtr shot = *ite;
 		shot->update( );
-		std::list<EnemyPtr>::iterator _enemy_ite = _enemies.begin( );
-		while ( _enemy_ite != _enemies.end( ) ) {
-			EnemyPtr enemy = *_enemy_ite;
-			if ( shot->isOverlapped( enemy ) ) {
-				ite = _shots.erase( ite );
-				continue;
-			}
-			_enemy_ite++;
+		if ( isOverlappedEnemys( shot ) ) {
+			ite = _shots.erase( ite );
+			continue;
 		}
 		ite++;
 	}
@@ -35,5 +30,19 @@ void Armoury::update( ) {
 void Armoury::addShot( ShotPtr shot ) {
 	_shots.push_back( shot );
 }
+
+bool Armoury::isOverlappedEnemys( ShotPtr shot ) {
+	std::list<EnemyPtr>::iterator _enemy_ite = _enemies.begin( );
+	while ( _enemy_ite != _enemies.end( ) ) {
+		EnemyPtr enemy = *_enemy_ite;
+		if ( shot->isOverlapped( enemy ) ) {
+			return true;
+		}
+		_enemy_ite++;
+	}
+
+	return false;
+}
+
 
 

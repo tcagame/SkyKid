@@ -83,6 +83,6 @@ void Player::setArmoury( ArmouryPtr armoury ) {
 
 
 void Player::actOnAttack( ) {
-	_armoury->addShot( ShotPtr( new Shot( Vector( getPos( ).x, getPos( ).y ) ) ) );
+	_armoury->addShot( ShotPtr( new Shot( getPos( ) ) ) );
 	_action = ACTION_MOVE; 
 }

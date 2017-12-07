@@ -3,7 +3,7 @@
 #include "Drawer.h"
 #include "Image.h"
 
-const int MOVE_SPEED = 3;
+const int MOVE_SPEED = 10;
 
 Shot::Shot( const Vector &pos ) :
 Character( pos, NORMAL_CHIP_SIZE ),
@@ -16,7 +16,7 @@ _vec( -MOVE_SPEED, 0 ) {
 Shot::~Shot( ) {
 }
 
-void Shot::update( ) {
+void Shot::act( ) {
 	setVec( _vec );
 	draw( );
 }

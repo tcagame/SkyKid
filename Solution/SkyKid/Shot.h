@@ -9,7 +9,7 @@ public:
 	Shot( const Vector &pos );
 	virtual ~Shot( );
 public:
-	void update( );
+	void act( );
 private:
 	void draw( );
 private:
