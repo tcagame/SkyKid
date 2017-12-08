@@ -15,5 +15,6 @@ private:
 	void draw( );
 private:
 	ImagePtr _image;
+	ImagePtr _ui;
 };
 

@@ -8,6 +8,7 @@
 SceneTitle::SceneTitle( ) {
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "title/logo.png" );
+	_ui = drawer->createImage( "title/ui.png" );
 }
 
 
@@ -25,6 +26,10 @@ Scene::SCENE SceneTitle::update( ) {
 
 void SceneTitle::draw( ) {
 	_image->setRect( 0, 0 );
-	_image->setPos( WINDOW_WIDTH / 2 - 512 / 2, 100 );
+	_image->setPos( WINDOW_WIDTH / 2 - 512 / 2, 70 );
 	_image->draw( );
+
+	_ui->setRect( 0, 0 );
+	_ui->setPos( WINDOW_WIDTH / 2 - 512 / 2, WINDOW_HEIGHT / 3 * 2 );
+	_ui->draw( );
 }
