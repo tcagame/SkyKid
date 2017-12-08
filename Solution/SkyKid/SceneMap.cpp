@@ -13,8 +13,10 @@ SceneMap::SceneMap( ) {
 SceneMap::~SceneMap( ) {
 }
 
-void SceneMap::update( ) {
+Scene::SCENE SceneMap::update( ) {
 	_player->update( );
 	_military->update( );
 	_armoury->update( );
+
+	return Scene::SCENE_CONTINUE;
 }

@@ -13,7 +13,7 @@ public:
 	SceneMap( );
 	virtual ~SceneMap( );
 public:
-	void update( );
+	Scene::SCENE update( );
 private:
 	PlayerPtr _player;
 	MilitaryPtr _military;

@@ -2,6 +2,7 @@
 
 #include "Task.h"
 #include <string>
+#include "Scene.h"
 
 PTR( Game );
 PTR( Scene );
@@ -15,7 +16,9 @@ public:
 public:
 	void update( );
 	void initialize( );
+	void changeScene( );
 private:
 	ScenePtr _scene;
+	Scene::SCENE _next;
 };
 
