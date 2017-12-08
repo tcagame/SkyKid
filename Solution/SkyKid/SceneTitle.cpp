@@ -2,6 +2,7 @@
 #include "Device.h"
 #include "Drawer.h"
 #include "Image.h"
+#include "define.h"
 
 
 SceneTitle::SceneTitle( ) {
@@ -24,6 +25,6 @@ Scene::SCENE SceneTitle::update( ) {
 
 void SceneTitle::draw( ) {
 	_image->setRect( 0, 0 );
-	_image->setPos( 350, 100 );
+	_image->setPos( WINDOW_WIDTH / 2 - 512 / 2, 100 );
 	_image->draw( );
 }
