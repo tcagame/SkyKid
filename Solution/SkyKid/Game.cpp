@@ -3,6 +3,7 @@
 
 #include "Scene.h"
 #include "SceneMap.h"
+#include "SceneTitle.h"
 
 #include "Drawer.h"
 
@@ -12,7 +13,7 @@ GamePtr Game::getTask( ) {
 }
 
 Game::Game( ) :
-_next( Scene::SCENE_MAP ){
+_next( Scene::SCENE_TITLE ) {
 }
 
 
@@ -31,7 +32,7 @@ void Game::changeScene( ) {
     }
     switch( _next ) {
 	case Scene::SCENE_TITLE:
-        _scene = ScenePtr( new SceneMap( ) );
+        _scene = ScenePtr( new SceneTitle( ) );
 		break;
 	case Scene::SCENE_MAP:
         _scene = ScenePtr( new SceneMap( ) );
