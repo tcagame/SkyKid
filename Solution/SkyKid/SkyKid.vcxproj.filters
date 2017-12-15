@@ -58,6 +58,9 @@
     <ClCompile Include="SceneTitle.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyAircraftGun.cpp">
+      <Filter>Character\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
@@ -136,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="SceneTitle.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyAircraftGun.h">
+      <Filter>Character\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
