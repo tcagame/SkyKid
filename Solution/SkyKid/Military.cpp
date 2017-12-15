@@ -10,6 +10,7 @@
 #include "EnemyInterceptionBalloon.h"
 #include "EnemyTruck.h"
 #include "EnemyAircraftGun.h"
+#include "EnemyGunShot.h"
 
 Military::Military( PlayerPtr player ) {
 	_player = player;
@@ -19,6 +20,7 @@ Military::Military( PlayerPtr player ) {
 	//_enemies.push_back ( EnemyPtr( new EnemyInterceptionBalloon( Vector( 200, 0 ), 64 ) ) );
 	_enemies.push_back ( EnemyPtr( new EnemyTruck( Vector( 0, 400 ), 64 ) ) );
 	_enemies.push_back ( EnemyPtr( new EnemyAircraftGun( Vector( 200, 300 ), 32 ) ) );
+
 }
 
 Military::~Military( ) {
