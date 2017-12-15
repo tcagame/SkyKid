@@ -11,15 +11,17 @@
 #include "EnemyTruck.h"
 #include "EnemyAircraftGun.h"
 #include "EnemyGunShot.h"
+#include "EnemyBomber.h"
 
 Military::Military( PlayerPtr player ) {
 	_player = player;
 	//_enemies.push_back( EnemyPtr( new EnemyFighter( Vector ( 60 , 60 ), NORMAL_CHIP_SIZE ) ) ); 
-	//_enemies.push_back( EnemyPtr( new EnemyAnitTank( Vector( 0, 600 ), 64 ) ) );
 	//_enemies.push_back ( EnemyPtr( new EnemyMiniBalloon( Vector( 100, 100 ), 64 ) ) );
 	//_enemies.push_back ( EnemyPtr( new EnemyInterceptionBalloon( Vector( 200, 0 ), 64 ) ) );
+	_enemies.push_back( EnemyPtr( new EnemyAnitTank( Vector( 0, 600 ), 64 ) ) );
 	_enemies.push_back ( EnemyPtr( new EnemyTruck( Vector( 0, 400 ), 64 ) ) );
 	_enemies.push_back ( EnemyPtr( new EnemyAircraftGun( Vector( 200, 300 ), 32 ) ) );
+	_enemies.push_back( EnemyPtr( new EnemyBomber( Vector( 1240, 100 ), 64 ) ) );
 
 }
 
