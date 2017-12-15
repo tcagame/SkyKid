@@ -8,3 +8,4 @@ const int BULLTE_CHIP_SIZE = 16;
 const int WINDOW_WIDTH = 1280;
 const int WINDOW_HEIGHT = 720;
 const int IMPACT_TIME = 12;
+const int COOL_TIME = 20;

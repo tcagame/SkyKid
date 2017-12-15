@@ -3,7 +3,7 @@
 #include "Drawer.h"
 #include "Image.h"
 
-const int MOVE_SPEED = 10;
+const int MOVE_SPEED = 7;
 
 Shot::Shot( const Vector &pos ) :
 Character( pos, 32 ),

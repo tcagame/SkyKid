@@ -10,7 +10,8 @@ const int MOVE_SPEED = 8;
 
 Player::Player( ) :
 Character( START_POS, NORMAL_CHIP_SIZE ),
-_tx( 6 ) {
+_tx( 6 ),
+_cool_time( 0 ) {
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "player.png" );
 }
@@ -20,6 +21,7 @@ Player::~Player( ) {
 }
 
 void Player::act( ) {
+	_cool_time++;
 	switch ( _action ) {
 	case ACTION_MOVE:
 		actOnMove( );
@@ -28,7 +30,9 @@ void Player::act( ) {
 		actOnSomersault( );
 		break;
 	case ACTION_ATTACK:
-		actOnAttack( );
+		if( isCoolTime( ) ) {
+			actOnAttack( );
+		}
 	}
 	draw( );
 }
@@ -84,5 +88,10 @@ void Player::setArmoury( ArmouryPtr armoury ) {
 
 void Player::actOnAttack( ) {
 	_armoury->addShot( ShotPtr( new Shot( getPos( ) ) ) );
+	_cool_time = 0;
 	_action = ACTION_MOVE; 
+}
+
+bool Player::isCoolTime( ) {
+	return _cool_time > COOL_TIME;
 }
