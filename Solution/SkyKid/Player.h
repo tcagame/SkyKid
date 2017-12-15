@@ -25,8 +25,10 @@ private:
 	void actOnMove( );
 	void actOnSomersault( );
 	void actOnAttack( );
+	bool isCoolTime( );
 private:
 	int _tx;
+	int _cool_time;
 	ACTION _action;	
 	ImagePtr _image;
 	ArmouryPtr _armoury;
