@@ -20,9 +20,11 @@ public:
 	Vector getOverlappedPos( ) const;
 	bool isOverlapped( CharacterPtr target ) const;
 	bool isOverlapped( EnemyPtr enemy ) const;
+	int getActTime( );
 private:
 	virtual void act( ) = 0;
 private:
+	int _act_time;
 	int _chip_size;
 	Vector _pos;
 	Vector _vec;

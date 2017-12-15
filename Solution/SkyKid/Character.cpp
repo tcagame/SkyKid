@@ -5,7 +5,8 @@
 Character::Character( const Vector& pos, const int chip_size ) :
 _pos( pos ),
 _vec( Vector( 0, 0 ) ),
-_chip_size( chip_size ) {
+_chip_size( chip_size ),
+_act_time( 0 ) {
 
 }
 
@@ -30,6 +31,7 @@ void Character::setVec( Vector vec ) {
 }
 
 void Character::update( ) {
+	_act_time++;
 	act( );
 	move( );
 }
@@ -56,4 +58,8 @@ bool Character::isOverlapped( EnemyPtr enemy ) const {
 	Vector vec = getOverlappedPos( ) - enemy->getOverlappedPos( );
 	double radius = getOverlappedRadius( ) + enemy->getOverlappedRadius( );
 	return vec.getLength( ) < radius;
+}
+
+int Character::getActTime( ) {
+	return _act_time;
 }

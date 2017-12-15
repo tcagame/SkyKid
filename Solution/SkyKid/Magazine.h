@@ -13,4 +13,5 @@ public:
 	void addImpact( ImpactPtr impact );
 private:
 	std::list< ImpactPtr > _impacts;
+
 };
