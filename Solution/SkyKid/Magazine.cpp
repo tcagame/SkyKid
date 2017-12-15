@@ -17,7 +17,7 @@ void Magazine::update( ) {
 	while ( ite != _impacts.end( ) ) {
 		ImpactPtr impact = *ite;
 		impact->update( );
-		if ( impact->getActTime( ) > 10 ) {
+		if ( impact->getActTime( ) > IMPACT_TIME ) {
 			ite = _impacts.erase( ite );
 			continue;
 		}

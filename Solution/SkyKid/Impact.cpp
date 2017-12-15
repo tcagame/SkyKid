@@ -5,9 +5,9 @@
 
 Impact::Impact( const Vector &pos ) :
 Character( pos, 32 ),
-_tx( 7 ) {
+_tx( 1 ) {
 	DrawerPtr drawer = Drawer::getTask( );
-	_image = drawer->createImage( "impact/Bom64.png" );
+	_image = drawer->createImage( "impact/Bom32.png" );
 }
 
 Impact::~Impact( ) {
@@ -15,11 +15,14 @@ Impact::~Impact( ) {
 
 void Impact::act( ) {
 	setVec( _vec );
+	if ( getActTime( ) == IMPACT_TIME / 2 ) {
+		_tx = 0;
+	}
 	draw( );
 }
 
 void Impact::draw( ) {
-	_image->setRect( 0, 0, 64, 64 );
+	_image->setRect( SMALL_CHIP_SIZE * _tx, 0, 32, 32 );
 	_image->setPos( ( int )getPos( ).x, ( int )getPos( ).y );
 	_image->draw( );
 }
