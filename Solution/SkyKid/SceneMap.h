@@ -7,6 +7,7 @@ PTR( Player );
 PTR( Military );
 PTR( Armoury );
 PTR( Image );
+PTR( Magazine );
 
 
 class SceneMap : public Scene {
@@ -22,6 +23,7 @@ private:
 	PlayerPtr _player;
 	MilitaryPtr _military;
 	ArmouryPtr _armoury;
+	MagazinePtr _magazine;
 
 	ImagePtr _back;
 	int _b_pos_x;

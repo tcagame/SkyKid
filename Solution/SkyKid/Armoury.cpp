@@ -5,6 +5,9 @@
 
 #include "Military.h"
 
+#include "Magazine.h"
+#include "Impact.h"
+
 
 Armoury::Armoury( MilitaryPtr military ) {
 	_enemies = military->getEnemyList( );
@@ -20,6 +23,7 @@ void Armoury::update( ) {
 		ShotPtr shot = *ite;
 		shot->update( );
 		if ( isOverlappedEnemys( shot ) ) {
+			_magazine->addImpact( ImpactPtr( new Impact( shot->getPos( ) ) ) );
 			ite = _shots.erase( ite );
 			continue;
 		}
@@ -42,6 +46,11 @@ bool Armoury::isOverlappedEnemys( ShotPtr shot ) {
 	}
 
 	return false;
+}
+
+
+void Armoury::setMagazine( MagazinePtr magazine ) {
+	_magazine = magazine;
 }
 
 

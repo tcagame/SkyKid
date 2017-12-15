@@ -5,6 +5,7 @@
 PTR( Shot );
 PTR( Military );
 PTR( Enemy );
+PTR( Magazine );
 
 class Armoury {
 public:
@@ -13,10 +14,12 @@ public:
 public:
 	void update( );
 	void addShot( ShotPtr shot );
+	void setMagazine( MagazinePtr magazine );
 private:
 	bool isOverlappedEnemys( ShotPtr shot );
 private:
 	std::list< ShotPtr > _shots;
 	std::list<EnemyPtr> _enemies;
+	MagazinePtr _magazine;
 };
 

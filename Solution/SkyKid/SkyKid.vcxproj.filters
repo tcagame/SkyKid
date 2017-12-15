@@ -61,6 +61,12 @@
     <ClCompile Include="EnemyAircraftGun.cpp">
       <Filter>Character\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="Impact.cpp">
+      <Filter>Impact</Filter>
+    </ClCompile>
+    <ClCompile Include="Magazine.cpp">
+      <Filter>Impact</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
@@ -80,6 +86,9 @@
     </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{9f4b8ef0-8245-4bd3-b7db-8ddf972e9e9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Impact">
+      <UniqueIdentifier>{b93a19e3-18be-409f-b6df-7848b582ef06}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="EnemyAircraftGun.h">
       <Filter>Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Impact.h">
+      <Filter>Impact</Filter>
+    </ClInclude>
+    <ClInclude Include="Magazine.h">
+      <Filter>Impact</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

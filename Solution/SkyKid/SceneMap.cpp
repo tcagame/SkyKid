@@ -2,6 +2,8 @@
 #include "Player.h"
 #include "Military.h"
 #include "Armoury.h"
+#include "Magazine.h"
+
 #include "Drawer.h"
 #include "Image.h"
 #include "define.h"
@@ -10,9 +12,12 @@ SceneMap::SceneMap( ) :
 _b_pos_x( 0 ),
 _b_pos_y( 0 ) {
 	_player	= PlayerPtr( new Player( ) );
+	_magazine = MagazinePtr( new Magazine( ) );
 	_military = MilitaryPtr( new Military( _player ) );
 	_armoury = ArmouryPtr( new Armoury( _military ) );
+
 	_player->setArmoury( _armoury );
+	_armoury->setMagazine( _magazine );
 
 	DrawerPtr drawer = Drawer::getTask( );
 	_back = drawer->createImage( "back/back.png" );
@@ -27,6 +32,7 @@ Scene::SCENE SceneMap::update( ) {
 	_player->update( );
 	_military->update( );
 	_armoury->update( );
+	_magazine->update( );
 
 	return Scene::SCENE_CONTINUE;
 }
