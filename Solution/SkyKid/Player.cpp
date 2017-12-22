@@ -5,6 +5,7 @@
 #include "Device.h"
 #include "Shot.h"
 #include "Armoury.h"
+#include "Sound.h"
 
 const int MOVE_SPEED = 8;
 
@@ -87,6 +88,8 @@ void Player::setArmoury( ArmouryPtr armoury ) {
 
 
 void Player::actOnAttack( ) {
+	SoundPtr sound = Sound::getTask( );
+	sound->playSE( "sound/sky_se_max_shot.wav" );
 	_armoury->addShot( ShotPtr( new Shot( getPos( ) ) ) );
 	_cool_time = 0;
 	_action = ACTION_MOVE; 

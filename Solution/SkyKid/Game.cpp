@@ -6,6 +6,8 @@
 #include "SceneTitle.h"
 
 #include "Drawer.h"
+#include "Sound.h"
+
 
 GamePtr Game::getTask( ) {
 	ApplicationPtr app = Application::getInstance( );
@@ -27,15 +29,20 @@ void Game::update( ) {
 }
 
 void Game::changeScene( ) {
-    if ( _next == Scene::SCENE_CONTINUE ) {
+	SoundPtr sound = Sound::getTask( );
+	if ( _next == Scene::SCENE_CONTINUE ) {
         return;
     }
     switch( _next ) {
 	case Scene::SCENE_TITLE:
         _scene = ScenePtr( new SceneTitle( ) );
+		sound->playBGM( "sound/sky_music_start_music.wav" );
 		break;
 	case Scene::SCENE_MAP:
         _scene = ScenePtr( new SceneMap( ) );
+		sound->playBGM( "sound/sky_music_skykidmarch.wav" );
+		break;
+	case Scene::SCENE_RESULT:
 		break;
     }
 }

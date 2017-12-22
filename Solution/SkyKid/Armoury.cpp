@@ -48,6 +48,10 @@ bool Armoury::isOverlappedEnemys( ShotPtr shot ) {
 	return false;
 }
 
+std::list<ShotPtr> Armoury::getShotList( ) const {
+	return _shots;
+}
+
 
 void Armoury::setMagazine( MagazinePtr magazine ) {
 	_magazine = magazine;

@@ -15,6 +15,7 @@ public:
 	void update( );
 	void addShot( ShotPtr shot );
 	void setMagazine( MagazinePtr magazine );
+	std::list<ShotPtr>getShotList( ) const;
 private:
 	bool isOverlappedEnemys( ShotPtr shot );
 private:

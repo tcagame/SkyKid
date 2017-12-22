@@ -4,6 +4,7 @@
 
 PTR( Character );
 PTR( Enemy );
+PTR( Shot );
 
 class Character {
 public:
@@ -20,6 +21,7 @@ public:
 	Vector getOverlappedPos( ) const;
 	bool isOverlapped( CharacterPtr target ) const;
 	bool isOverlapped( EnemyPtr enemy ) const;
+	bool isOverlapped( ShotPtr shot ) const;
 	int getActTime( );
 private:
 	virtual void act( ) = 0;

@@ -1,5 +1,6 @@
 #include "Character.h"
 #include "Enemy.h"
+#include "Shot.h"
 
 
 Character::Character( const Vector& pos, const int chip_size ) :
@@ -57,6 +58,12 @@ bool Character::isOverlapped( CharacterPtr target ) const {
 bool Character::isOverlapped( EnemyPtr enemy ) const {
 	Vector vec = getOverlappedPos( ) - enemy->getOverlappedPos( );
 	double radius = getOverlappedRadius( ) + enemy->getOverlappedRadius( );
+	return vec.getLength( ) < radius;
+}
+
+bool Character::isOverlapped( ShotPtr shot ) const {
+	Vector vec = getOverlappedPos( ) - shot->getOverlappedPos( );
+	double radius = getOverlappedRadius( ) + shot->getOverlappedRadius( );
 	return vec.getLength( ) < radius;
 }
 
