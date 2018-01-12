@@ -23,6 +23,6 @@ void Shot::act( ) {
 
 void Shot::draw( ) {
 	_image->setRect( 0, 0, 32, 32 );
-	_image->setPos( ( int )getPos( ).x, ( int )getPos( ).y + 20);
+	_image->setPos( ( int )getPos( ).x, ( int )getPos( ).y + 20 );
 	_image->draw( );
 }

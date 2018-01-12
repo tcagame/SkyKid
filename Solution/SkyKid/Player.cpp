@@ -13,6 +13,7 @@ Player::Player( ) :
 Character( START_POS, NORMAL_CHIP_SIZE ),
 _tx( 6 ),
 _cool_time( 0 ) {
+//	_military = military;
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "player.png" );
 }
@@ -23,6 +24,10 @@ Player::~Player( ) {
 
 void Player::act( ) {
 	_cool_time++;
+
+	//if ( isOverlapped( _military ) ) {
+	//	_action = ACTION_DEAD;
+	//};
 	switch ( _action ) {
 	case ACTION_MOVE:
 		actOnMove( );
@@ -34,6 +39,10 @@ void Player::act( ) {
 		if( isCoolTime( ) ) {
 			actOnAttack( );
 		}
+		break;
+	case ACTION_DEAD:
+		actOnDead( );
+		break;
 	}
 	draw( );
 }
@@ -95,6 +104,14 @@ void Player::actOnAttack( ) {
 	_action = ACTION_MOVE; 
 }
 
+void Player::actOnDead( ) {
+
+}
+
 bool Player::isCoolTime( ) {
 	return _cool_time > COOL_TIME;
+}
+
+Player::ACTION Player::getAction( ) const {
+	return _action;
 }

@@ -3,7 +3,7 @@
 #include "Drawer.h"
 #include "Image.h"
 
-const Vector MOVE_SPEED = Vector( 3, 0 );
+const Vector MOVE_SPEED = Vector( 4, 0 );
 
 EnemyTruck::EnemyTruck( const Vector &pos, const int chip_size ) :
 Enemy( pos, NORMAL_CHIP_SIZE ),

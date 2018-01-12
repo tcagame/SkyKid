@@ -6,6 +6,7 @@ PTR( Image );
 PTR( Shot );
 PTR( Enemy );
 PTR( Armoury );
+PTR( Military );
 
 class Player : public Character {
 public:
@@ -15,16 +16,19 @@ private:
 	enum ACTION {
 		ACTION_MOVE,
 		ACTION_SOMERSAULT,
-		ACTION_ATTACK
+		ACTION_ATTACK,
+		ACTION_DEAD
 	};
 public:
 	void setArmoury( ArmouryPtr armoury );
+	ACTION getAction( ) const;
 private:
 	void act( );
 	void draw( );
 	void actOnMove( );
 	void actOnSomersault( );
 	void actOnAttack( );
+	void actOnDead( );
 	bool isCoolTime( );
 private:
 	int _tx;
@@ -32,6 +36,6 @@ private:
 	ACTION _action;	
 	ImagePtr _image;
 	ArmouryPtr _armoury;
-	EnemyPtr _enemy;
+	MilitaryPtr _military;
 };
 

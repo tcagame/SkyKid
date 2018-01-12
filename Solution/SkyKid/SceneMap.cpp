@@ -8,7 +8,7 @@
 #include "Image.h"
 #include "define.h"
 
-const int MAP_SPEED = 1;
+const int MAP_SPEED = 3;
 
 SceneMap::SceneMap( ) : 
 _b_pos_x( 0 ),
@@ -19,11 +19,12 @@ _ty( 0 ),
 _ty_1( 1 ) {
 	_player	= PlayerPtr( new Player( ) );
 	_magazine = MagazinePtr( new Magazine( ) );
-	_military = MilitaryPtr( new Military( _player ) );
-	_armoury = ArmouryPtr( new Armoury( _military ) );
+	_military = MilitaryPtr( new Military( ) );
+	_armoury = ArmouryPtr( new Armoury( ) );
 
 	_player->setArmoury( _armoury );
-	_armoury->setMagazine( _magazine );
+	_military->setArmoury( _armoury );
+	_military->setMagazine( _magazine );
 
 	DrawerPtr drawer = Drawer::getTask( );
 	_back = drawer->createImage( "back/Skykid_BG_map.png" );
@@ -37,8 +38,8 @@ Scene::SCENE SceneMap::update( ) {
 	draw( );
 
 	_player->update( );
-	_military->update( );
 	_armoury->update( );
+	_military->update( );
 	_magazine->update( );
 
 	return Scene::SCENE_CONTINUE;
