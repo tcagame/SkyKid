@@ -9,3 +9,6 @@ const int WINDOW_WIDTH = 1280;
 const int WINDOW_HEIGHT = 720;
 const int IMPACT_TIME = 12;
 const int COOL_TIME = 20;
+
+const int MAP_WIDTH = 1534;
+const int MAP_HEIGHT = 769;

@@ -18,6 +18,8 @@ public:
 	Scene::SCENE update( );
 private:
 	void draw( );
+	void draw1( );
+	void draw2( );
 	void moveBack( );
 private:
 	PlayerPtr _player;
@@ -28,5 +30,10 @@ private:
 	ImagePtr _back;
 	int _b_pos_x;
 	int _b_pos_y;
+
+	int _mx;
+	int _mx_1;
+	int _ty;
+	int _ty_1;
 };
 
