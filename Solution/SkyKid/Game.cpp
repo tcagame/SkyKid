@@ -36,13 +36,14 @@ void Game::changeScene( ) {
     switch( _next ) {
 	case Scene::SCENE_TITLE:
         _scene = ScenePtr( new SceneTitle( ) );
-		sound->playBGM( "sound/sky_music_start_music.wav" );
+		sound->playBGM( "sound/sky_music_skykidmarch_intro.wav" );
 		break;
 	case Scene::SCENE_MAP:
         _scene = ScenePtr( new SceneMap( ) );
 		sound->playBGM( "sound/sky_music_skykidmarch.wav" );
 		break;
 	case Scene::SCENE_RESULT:
+		sound->playBGM( "sound/sky_music_extend.wav" );
 		break;
     }
 }
