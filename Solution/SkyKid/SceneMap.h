@@ -37,5 +37,7 @@ private:
 	int _mx_1;
 	int _ty;
 	int _ty_1;
+
+	int _gameover_time;
 };
 
