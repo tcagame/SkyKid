@@ -87,7 +87,14 @@ void Player::actOnMove( ) {
 }
 
 void Player::actOnSomersault( ) {
-
+	_vec.x = 9 * -cos( _angle );
+	_vec.y = 7 * -sin( _angle );
+	_angle += PI /30;
+	if ( _angle > ( 2 * PI ) ) { 
+		_angle = 0;
+		_action = ACTION_MOVE;
+	}
+	setVec( _vec );
 }
 
 void Player::setArmoury( ArmouryPtr armoury ) {

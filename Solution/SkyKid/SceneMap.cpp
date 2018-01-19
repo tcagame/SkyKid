@@ -121,31 +121,31 @@ void SceneMap::appearanceEnemy( ) {
 			_military->addEnemy( EnemyPtr( new EnemyAnitTank( Vector( -120, 613 ), 64 ) ) ) ;
 			_military->addEnemy( EnemyPtr( new EnemyTruck( Vector( 300, 598 ), 64 ) ) );
 			_military->addEnemy( EnemyPtr( new EnemyTruck( Vector( 260, 598 ), 64 ) ) );
-			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( 0 , 80 ), NORMAL_CHIP_SIZE ) ) ); 
-			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( 40 , 120 ), NORMAL_CHIP_SIZE ) ) ); 
-			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( 80 , 160 ), NORMAL_CHIP_SIZE ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -140 , 80 ), NORMAL_CHIP_SIZE ) ) ); 
+			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -100 , 120 ), NORMAL_CHIP_SIZE ) ) ); 
+			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -60 , 160 ), NORMAL_CHIP_SIZE ) ) );
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -500 , 500 ), NORMAL_CHIP_SIZE ) ) ); 
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -460 , 460 ), NORMAL_CHIP_SIZE ) ) ); 
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -420 , 420 ), NORMAL_CHIP_SIZE ) ) ); 
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -380 , 380 ), NORMAL_CHIP_SIZE ) ) ); 
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -500 ,200  ), NORMAL_CHIP_SIZE ) ) ); 
-			_military->addEnemy( EnemyPtr( new EnemyMiniBalloon( Vector( -500, 155 ), 64 ) ) );
-			_military->addEnemy( EnemyPtr( new EnemyMiniBalloon( Vector( -500, 210 ), 64 ) ) );
-			_military->addEnemy( EnemyPtr( new EnemyMiniBalloon( Vector( -500, 265 ), 64 ) ) );
-			_military->addEnemy( EnemyPtr( new EnemyMiniBalloon( Vector( -500, 320 ), 64 ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyMiniBalloon( Vector( -550, 155 ), 64 ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyMiniBalloon( Vector( -550, 210 ), 64 ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyMiniBalloon( Vector( -550, 265 ), 64 ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyMiniBalloon( Vector( -550, 320 ), 64 ) ) );
 			
 			_pop = true;
 		break;
 		case 2:
-			_military->addEnemy( EnemyPtr( new EnemyAnitTank( Vector( -20, 600 ), 64 ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyAnitTank( Vector( -300, 600 ), 64 ) ) );
 			_military->addEnemy( EnemyPtr( new EnemyTruck( Vector( -20, 400 ), 64 ) ) );
-			_military->addEnemy( EnemyPtr( new EnemyAircraftGun( Vector( -20, 613 ), 32 ) ) );
-			_military->addEnemy( EnemyPtr( new EnemyBomber( Vector( 1242, 100 ), 64 ) ) );
-			_military->addEnemy( EnemyPtr( new EnemyInterceptionBalloon( Vector( 0, 0 ), 64 ) ) );
-			_military->addEnemy( EnemyPtr( new EnemyInterceptionBalloon( Vector( -40, 30 ), 64 ) ) );
-			_military->addEnemy( EnemyPtr( new EnemyInterceptionBalloon( Vector( -70, 60 ), 64 ) ) );
-			_military->addEnemy( EnemyPtr( new EnemyInterceptionBalloon( Vector( -100, 90 ), 64 ) ) );
-			_military->addEnemy( EnemyPtr( new EnemyInterceptionBalloon( Vector( -130, 120 ), 64 ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyAircraftGun( Vector( -100, 613 ), 32 ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyBomber( Vector( 1300, 100 ), 64 ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyInterceptionBalloon( Vector( -30, 0 ), 64 ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyInterceptionBalloon( Vector( -60, 30 ), 64 ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyInterceptionBalloon( Vector( -90, 60 ), 64 ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyInterceptionBalloon( Vector( -120, 90 ), 64 ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyInterceptionBalloon( Vector( -150, 120 ), 64 ) ) );
 			_pop = true;
 		break;
 		case 4:

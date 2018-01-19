@@ -43,5 +43,8 @@ private:
 	ArmouryPtr _armoury;
 	MilitaryPtr _military;
 	std::list<EnemyPtr> _enemies;
+
+	Vector _vec;
+	double _angle;
 };
 
