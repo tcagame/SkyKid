@@ -67,6 +67,9 @@
     <ClCompile Include="Magazine.cpp">
       <Filter>Character\Impact</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyFighter_1.cpp">
+      <Filter>Character\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
@@ -157,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="Magazine.h">
       <Filter>Character\Impact</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyFighter_1.h">
+      <Filter>Character\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

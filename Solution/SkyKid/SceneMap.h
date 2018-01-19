@@ -22,6 +22,7 @@ private:
 	void draw2( );
 	void moveBack( );
 	void drawGameOver( );
+	void appearanceEnemy( );
 private:
 	PlayerPtr _player;
 	MilitaryPtr _military;
@@ -37,5 +38,7 @@ private:
 	int _mx_1;
 	int _ty;
 	int _ty_1;
+
+	bool _pop;
 };
 
