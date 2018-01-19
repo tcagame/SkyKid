@@ -3,5 +3,9 @@ Solution/SkyKid/x64/Debug/
 Solution/SkyKid/Log.txt
 Solution/Solution.VC.VC.opendb
 Solution/.vs/Solution/v14/.suo
+<<<<<<< HEAD
 Solution/SkyKid/Debug/vc140.idb
 Solution/SkyKid/Debug/
+=======
+*.wav
+>>>>>>> 0517a30e48051fe76ed33babe1157c2ebd6d2d7f
