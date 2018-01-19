@@ -17,17 +17,20 @@ _mx( 385 ),
 _mx_1( 387 - MAP_WIDTH ),
 _ty( 0 ),
 _ty_1( 1 ) {
-	_player	= PlayerPtr( new Player( ) );
 	_magazine = MagazinePtr( new Magazine( ) );
 	_military = MilitaryPtr( new Military( ) );
 	_armoury = ArmouryPtr( new Armoury( ) );
+	_player	= PlayerPtr( new Player( ) );
 
 	_player->setArmoury( _armoury );
+	_player->setMilitary( _military );
+
 	_military->setArmoury( _armoury );
 	_military->setMagazine( _magazine );
 
 	DrawerPtr drawer = Drawer::getTask( );
 	_back = drawer->createImage( "back/Skykid_BG_map.png" );
+	_game_over = drawer->createImage( "ui/gameover.png" );
 }
 
 SceneMap::~SceneMap( ) {
@@ -48,6 +51,9 @@ Scene::SCENE SceneMap::update( ) {
 void SceneMap::draw( ) {
 	draw1( );
 	draw2( );
+	if ( _player->getAction( ) == Player::ACTION::ACTION_DEAD ) {
+		drawGameOver( );
+	}
 }
 
 void SceneMap::draw1( ) {
@@ -72,4 +78,10 @@ void SceneMap::moveBack( ) {
 		_mx_1 = -MAP_WIDTH;
 		_ty_1 += 2;
 	}
+}
+
+void SceneMap::drawGameOver( ) {
+	_game_over->setRect( 0, 0 );
+	_game_over->setPos( WINDOW_WIDTH / 2 - 672 / 2, WINDOW_HEIGHT / 2 - 170 / 2 );
+	_game_over->draw( );
 }

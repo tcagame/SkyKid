@@ -27,7 +27,6 @@ Military::Military( ) {
 	_enemies.push_back ( EnemyPtr( new EnemyTruck( Vector( 0, 400 ), 64 ) ) );
 	_enemies.push_back ( EnemyPtr( new EnemyAircraftGun( Vector( 200, 300 ), 32 ) ) );
 	_enemies.push_back( EnemyPtr( new EnemyBomber( Vector( 1240, 100 ), 64 ) ) );
-
 }
 
 Military::~Military( ) {

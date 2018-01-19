@@ -1,6 +1,7 @@
 #pragma once
 #include "Character.h"
 #include "smart_ptr.h"
+#include <list>
 
 PTR( Image ); 
 PTR( Shot );
@@ -12,7 +13,7 @@ class Player : public Character {
 public:
 	Player( );
 	virtual ~Player( );
-private:
+public:
 	enum ACTION {
 		ACTION_MOVE,
 		ACTION_SOMERSAULT,
@@ -21,6 +22,7 @@ private:
 	};
 public:
 	void setArmoury( ArmouryPtr armoury );
+	void setMilitary( MilitaryPtr military );
 	ACTION getAction( ) const;
 private:
 	void act( );
@@ -29,13 +31,17 @@ private:
 	void actOnSomersault( );
 	void actOnAttack( );
 	void actOnDead( );
+	void overlapped( );
 	bool isCoolTime( );
 private:
 	int _tx;
+	int _ty;
+	int _time;
 	int _cool_time;
 	ACTION _action;	
 	ImagePtr _image;
 	ArmouryPtr _armoury;
 	MilitaryPtr _military;
+	std::list<EnemyPtr> _enemies;
 };
 

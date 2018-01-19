@@ -21,6 +21,7 @@ private:
 	void draw1( );
 	void draw2( );
 	void moveBack( );
+	void drawGameOver( );
 private:
 	PlayerPtr _player;
 	MilitaryPtr _military;
@@ -28,6 +29,7 @@ private:
 	MagazinePtr _magazine;
 
 	ImagePtr _back;
+	ImagePtr _game_over;
 	int _b_pos_x;
 	int _b_pos_y;
 

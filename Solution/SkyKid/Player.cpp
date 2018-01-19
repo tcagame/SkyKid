@@ -6,13 +6,17 @@
 #include "Shot.h"
 #include "Armoury.h"
 #include "Sound.h"
+#include "Enemy.h"
+#include "Military.h"
 
 const int MOVE_SPEED = 8;
 
 Player::Player( ) :
 Character( START_POS, NORMAL_CHIP_SIZE ),
 _tx( 6 ),
-_cool_time( 0 ) {
+_cool_time( 0 ),
+_time( 0 ),
+_ty( 1 ) {
 //	_military = military;
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "player.png" );
@@ -24,10 +28,7 @@ Player::~Player( ) {
 
 void Player::act( ) {
 	_cool_time++;
-
-	//if ( isOverlapped( _military ) ) {
-	//	_action = ACTION_DEAD;
-	//};
+	overlapped( );
 	switch ( _action ) {
 	case ACTION_MOVE:
 		actOnMove( );
@@ -36,9 +37,7 @@ void Player::act( ) {
 		actOnSomersault( );
 		break;
 	case ACTION_ATTACK:
-		if( isCoolTime( ) ) {
-			actOnAttack( );
-		}
+		actOnAttack( );
 		break;
 	case ACTION_DEAD:
 		actOnDead( );
@@ -48,7 +47,7 @@ void Player::act( ) {
 }
 
 void Player::draw( ) {
-	_image->setRect( NORMAL_CHIP_SIZE * _tx, 64, NORMAL_CHIP_SIZE, NORMAL_CHIP_SIZE );
+	_image->setRect( NORMAL_CHIP_SIZE * _tx, NORMAL_CHIP_SIZE * _ty, NORMAL_CHIP_SIZE, NORMAL_CHIP_SIZE );
 	_image->setPos( ( int )getPos( ).x, ( int )getPos( ).y );
 	_image->draw( );
 }
@@ -88,11 +87,15 @@ void Player::actOnMove( ) {
 }
 
 void Player::actOnSomersault( ) {
-	setVec( Vector( 0, -10 ) );
+
 }
 
 void Player::setArmoury( ArmouryPtr armoury ) {
 	_armoury = armoury;
+}
+
+void Player::setMilitary( MilitaryPtr military ) {
+	_military = military;
 }
 
 
@@ -105,7 +108,16 @@ void Player::actOnAttack( ) {
 }
 
 void Player::actOnDead( ) {
+	_time++;
+	setVec( Vector( 0, 5 ) );
+	_ty = 2;
 
+	if(_time % 5 == 0 ) {
+		_tx++;
+		if ( _tx > 1 ) {
+			_tx = 0;
+		}
+	}
 }
 
 bool Player::isCoolTime( ) {
@@ -115,3 +127,17 @@ bool Player::isCoolTime( ) {
 Player::ACTION Player::getAction( ) const {
 	return _action;
 }
+
+void Player::overlapped( ) {
+	_enemies = _military->getEnemyList( );
+	std::list<EnemyPtr>::iterator _enemy_ite = _enemies.begin( );
+	while ( _enemy_ite != _enemies.end( ) ) {
+		EnemyPtr enemy = *_enemy_ite;
+		if ( isOverlapped( enemy ) ) {
+			_tx = 0;
+			_action = ACTION_DEAD;
+		}
+		_enemy_ite++;
+	}
+}
+
