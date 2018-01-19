@@ -16,5 +16,6 @@ private:
 	ImagePtr _image;
 	Vector _vec;
 	int _tx;
+	int _ty;
 };
 

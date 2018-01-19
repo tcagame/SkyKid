@@ -3,6 +3,7 @@
 #include "Military.h"
 #include "Armoury.h"
 #include "Magazine.h"
+#include "Impact.h"
 
 #include "Drawer.h"
 #include "Image.h"
@@ -22,6 +23,7 @@
 #include "EnemyFighter_1.h"
 
 const int MAP_SPEED = 4;
+const int GAMEOVER_COUNT = 120;
 
 SceneMap::SceneMap( ) : 
 _b_pos_x( 0 ),
@@ -30,7 +32,8 @@ _mx( 385 ),
 _mx_1( 387 - MAP_WIDTH ),
 _ty( 0 ),
 _ty_1( 1 ),
-_pop( false ) {
+_pop( false ),
+_gameover_time( 0 ) {
 	_magazine = MagazinePtr( new Magazine( ) );
 	_military = MilitaryPtr( new Military( ) );
 	_armoury = ArmouryPtr( new Armoury( ) );
@@ -60,7 +63,9 @@ Scene::SCENE SceneMap::update( ) {
 	_armoury->update( );
 	_military->update( );
 	_magazine->update( );
-
+		if ( _gameover_time > GAMEOVER_COUNT ) { 
+			return Scene::SCENE_TITLE;
+		}
 	return Scene::SCENE_CONTINUE;
 }
 
@@ -68,7 +73,11 @@ void SceneMap::draw( ) {
 	draw1( );
 	draw2( );
 	if ( _player->getAction( ) == Player::ACTION::ACTION_DEAD ) {
+		_gameover_time++;
 		drawGameOver( );
+		if ( _gameover_time == 1 ) {
+			_magazine->addImpact( ImpactPtr( new Impact( _player->getPos( ) ) ) );
+		}
 	}
 }
 

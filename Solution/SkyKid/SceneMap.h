@@ -40,5 +40,6 @@ private:
 	int _ty_1;
 
 	bool _pop;
+	int _gameover_time;
 };
 

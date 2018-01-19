@@ -55,22 +55,22 @@ void Player::draw( ) {
 void Player::actOnMove( ) {	
 	DevicePtr device = Device::getTask( );
 	Vector vec;
-	if ( device->getDirX( ) > 0 ) {
+	if ( device->getDirX( ) > 0 && getPos( ).x < WINDOW_WIDTH -128 ) {
 		vec += Vector( MOVE_SPEED, 0 );
 		_tx = 6;
 	} 
 	
-	if ( device->getDirX( ) < 0 ) {
+	if ( device->getDirX( ) < 0 && getPos( ).x > 0 ) {
 		vec += Vector( -MOVE_SPEED, 0 );
 		_tx = 6;
 	}
 
-	if ( device->getDirY( ) > 0 ) {
+	if ( device->getDirY( ) > 0 && getPos( ).y < WINDOW_HEIGHT - 128 ) {
 		vec += Vector( 0, MOVE_SPEED );
 		_tx = 4;
 	}
 
-	if ( device->getDirY( ) < 0 ) {
+	if ( device->getDirY( ) < 0 && getPos( ).y > 0 ) {
 		vec += Vector( 0, -MOVE_SPEED );
 		_tx = 2;
 	}
