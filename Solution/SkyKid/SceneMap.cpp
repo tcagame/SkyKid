@@ -3,13 +3,14 @@
 #include "Military.h"
 #include "Armoury.h"
 #include "Magazine.h"
+#include "Impact.h"
 
 #include "Drawer.h"
 #include "Image.h"
 #include "define.h"
 
 const int MAP_SPEED = 3;
-const int GAMEOVER_COUNT = 80;
+const int GAMEOVER_COUNT = 120;
 
 SceneMap::SceneMap( ) : 
 _b_pos_x( 0 ),
@@ -58,6 +59,9 @@ void SceneMap::draw( ) {
 	if ( _player->getAction( ) == Player::ACTION::ACTION_DEAD ) {
 		_gameover_time++;
 		drawGameOver( );
+		if ( _gameover_time == 1 ) {
+			_magazine->addImpact( ImpactPtr( new Impact( _player->getPos( ) ) ) );
+		}
 	}
 }
 
