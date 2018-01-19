@@ -19,6 +19,8 @@
 #include "Magazine.h"
 #include "Impact.h"
 
+#include "Sound.h"
+
 Military::Military( ) {
 	//_enemies.push_back( EnemyPtr( new EnemyFighter( Vector ( 60 , 60 ), NORMAL_CHIP_SIZE ) ) ); 
 	//_enemies.push_back ( EnemyPtr( new EnemyMiniBalloon( Vector( 100, 100 ), 64 ) ) );
@@ -40,6 +42,8 @@ void Military::update( ) {
 		EnemyPtr enemy = *ite;
 		enemy->update( );
 		if ( isOverlappedShots( enemy ) ) {
+			SoundPtr sound = Sound::getTask( );
+			sound->playSE( "sound/sky_se_aireborne_enemy_hit.wav" );
 			_magazine->addImpact( ImpactPtr( new Impact( enemy->getPos( ) ) ) );
 			ite = _enemies.erase( ite );
 			continue;
