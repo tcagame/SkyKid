@@ -10,6 +10,7 @@
 #include "Military.h"
 
 const int MOVE_SPEED = 8;
+const int MAX_S_TIME = 61;
 
 Player::Player( ) :
 Character( START_POS, NORMAL_CHIP_SIZE ),
@@ -90,11 +91,22 @@ void Player::actOnMove( ) {
 }
 
 void Player::actOnSomersault( ) {
+	_s_time++;
 	_vec.x = 9 * -cos( _angle );
 	_vec.y = 7 * -sin( _angle );
 	_angle += PI /30;
+	if ( _s_time < MAX_S_TIME / 4 ) {
+		_tx = 2;
+	}
+	if ( _s_time > MAX_S_TIME / 4 * 2 && _s_time < MAX_S_TIME / 4 * 3) {
+		_tx = 3;
+	}
+	if ( _s_time > MAX_S_TIME / 4 * 3 ) {
+		_tx = 4;
+	}
 	if ( _angle > ( 2 * PI ) ) { 
 		_angle = 0;
+		_s_time = 0;
 		_action = ACTION_MOVE;
 	}
 	setVec( _vec );

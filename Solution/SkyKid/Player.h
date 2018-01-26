@@ -41,6 +41,7 @@ private:
 	int _ty;
 	int _time;
 	int _cool_time;
+	int _s_time;
 	ACTION _action;	
 	ImagePtr _image;
 	ArmouryPtr _armoury;
