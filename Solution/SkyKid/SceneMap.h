@@ -22,6 +22,7 @@ private:
 	void draw2( );
 	void moveBack( );
 	void drawGameOver( );
+	void drawGameCrear( );
 	void appearanceEnemy( );
 private:
 	PlayerPtr _player;
@@ -31,6 +32,7 @@ private:
 
 	ImagePtr _back;
 	ImagePtr _game_over;
+	ImagePtr _game_crear;
 	int _b_pos_x;
 	int _b_pos_y;
 

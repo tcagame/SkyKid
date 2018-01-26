@@ -42,6 +42,9 @@ void Player::act( ) {
 	case ACTION_DEAD:
 		actOnDead( );
 		break;
+	case ACTION_CREAR:
+		actCrear( );
+		break;
 	}
 	draw( );
 }
@@ -148,3 +151,10 @@ void Player::overlapped( ) {
 	}
 }
 
+void Player::setAction( ACTION action ) {
+	_action = action;
+}
+
+void Player::actCrear( ) {
+	setVec( Vector( -MOVE_SPEED * 2, 0 ) );
+}

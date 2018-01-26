@@ -18,11 +18,13 @@ public:
 		ACTION_MOVE,
 		ACTION_SOMERSAULT,
 		ACTION_ATTACK,
-		ACTION_DEAD
+		ACTION_DEAD,
+		ACTION_CREAR
 	};
 public:
 	void setArmoury( ArmouryPtr armoury );
 	void setMilitary( MilitaryPtr military );
+	void setAction( ACTION action );
 	ACTION getAction( ) const;
 private:
 	void act( );
@@ -31,6 +33,7 @@ private:
 	void actOnSomersault( );
 	void actOnAttack( );
 	void actOnDead( );
+	void actCrear( );
 	void overlapped( );
 	bool isCoolTime( );
 private:
