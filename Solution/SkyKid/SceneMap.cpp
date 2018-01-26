@@ -22,6 +22,8 @@
 #include "EnemyBomber.h"
 #include "EnemyFighter_1.h"
 
+#include "Sound.h"
+
 const int MAP_SPEED = 4;
 const int GAMEOVER_COUNT = 120;
 
@@ -48,6 +50,7 @@ _gameover_time( 0 ) {
 	DrawerPtr drawer = Drawer::getTask( );
 	_back = drawer->createImage( "back/Skykid_BG_map.png" );
 	_game_over = drawer->createImage( "ui/gameover.png" );
+	_game_crear = drawer->createImage( "ui/creal.png");
 }
 
 SceneMap::~SceneMap( ) {
@@ -63,22 +66,29 @@ Scene::SCENE SceneMap::update( ) {
 	_armoury->update( );
 	_military->update( );
 	_magazine->update( );
-		if ( _gameover_time > GAMEOVER_COUNT ) { 
-			return Scene::SCENE_TITLE;
-		}
+	if ( _gameover_time > GAMEOVER_COUNT ) { 
+		return Scene::SCENE_TITLE;
+	}
 	return Scene::SCENE_CONTINUE;
 }
 
 void SceneMap::draw( ) {
 	draw1( );
 	draw2( );
+	SoundPtr sound = Sound::getTask( );
 	if ( _player->getAction( ) == Player::ACTION::ACTION_DEAD ) {
 		_gameover_time++;
 		drawGameOver( );
 		if ( _gameover_time == 1 ) {
 			_magazine->addImpact( ImpactPtr( new Impact( _player->getPos( ) ) ) );
+			sound->playBGM( "sound/sky_music_gameover.wav" );
 		}
 	}
+	if ( _player->getAction( ) == Player::ACTION::ACTION_CREAR ) {
+		drawGameCrear( );
+		sound->playBGM( "sound/sky_music_high_score.wav.wav" );
+	}
+	
 }
 
 void SceneMap::draw1( ) {
@@ -93,6 +103,9 @@ void SceneMap::draw2( ) {
 }
 
 void SceneMap::moveBack( ) {
+	if ( _ty_1 ==  7 ) {
+		_player->setAction( Player::ACTION_CREAR );
+	}
 	_mx += MAP_SPEED;
 	_mx_1 += MAP_SPEED;
 	if ( _mx > WINDOW_WIDTH ) {
@@ -104,12 +117,19 @@ void SceneMap::moveBack( ) {
 		_mx_1 = -MAP_WIDTH;
 		_ty_1 += 2;
 	}
+
 }
 
 void SceneMap::drawGameOver( ) {
 	_game_over->setRect( 0, 0 );
 	_game_over->setPos( WINDOW_WIDTH / 2 - 672 / 2, WINDOW_HEIGHT / 2 - 170 / 2 );
 	_game_over->draw( );
+}
+
+void SceneMap::drawGameCrear( ) {
+	_game_crear->setRect( 0, 0 );
+	_game_crear->setPos( WINDOW_WIDTH / 2 - 672 / 2, WINDOW_HEIGHT / 2 - 170 / 2 );
+	_game_crear->draw( );
 }
 
 void SceneMap::appearanceEnemy( ) {
@@ -130,11 +150,21 @@ void SceneMap::appearanceEnemy( ) {
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( 0 , 80 ), NORMAL_CHIP_SIZE ) ) ); 
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( 40 , 120 ), NORMAL_CHIP_SIZE ) ) ); 
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( 80 , 160 ), NORMAL_CHIP_SIZE ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyAnitTank( Vector( -40, 613 ), 64 ) ) ) ;
+			_military->addEnemy( EnemyPtr( new EnemyAnitTank( Vector( -80, 613 ), 64 ) ) ) ;
+			_military->addEnemy( EnemyPtr( new EnemyAnitTank( Vector( -120, 613 ), 64 ) ) ) ;
+			_military->addEnemy( EnemyPtr( new EnemyTruck( Vector( 300, 598 ), 64 ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyTruck( Vector( 260, 598 ), 64 ) ) );
+			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -140 , 80 ), NORMAL_CHIP_SIZE ) ) ); 
+			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -100 , 120 ), NORMAL_CHIP_SIZE ) ) ); 
+			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -60 , 160 ), NORMAL_CHIP_SIZE ) ) );
+
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -500 , 500 ), NORMAL_CHIP_SIZE ) ) ); 
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -460 , 460 ), NORMAL_CHIP_SIZE ) ) ); 
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -420 , 420 ), NORMAL_CHIP_SIZE ) ) ); 
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -380 , 380 ), NORMAL_CHIP_SIZE ) ) ); 
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -500 ,200  ), NORMAL_CHIP_SIZE ) ) ); 
+
 			_military->addEnemy( EnemyPtr( new EnemyMiniBalloon( Vector( -500, 155 ), 64 ) ) );
 			_military->addEnemy( EnemyPtr( new EnemyMiniBalloon( Vector( -500, 210 ), 64 ) ) );
 			_military->addEnemy( EnemyPtr( new EnemyMiniBalloon( Vector( -500, 265 ), 64 ) ) );
@@ -143,7 +173,7 @@ void SceneMap::appearanceEnemy( ) {
 			_pop = true;
 		break;
 		case 2:
-			
+
 			_military->addEnemy( EnemyPtr( new EnemyAircraftGun( Vector( -810, 605 ), 32 ) ) );
 			_military->addEnemy( EnemyPtr( new EnemyAircraftGun( Vector( -840, 605 ), 32 ) ) );
 			_military->addEnemy( EnemyPtr( new EnemyAircraftGun( Vector( -870, 605 ), 32 ) ) );
@@ -183,6 +213,7 @@ void SceneMap::appearanceEnemy( ) {
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -3160 ,140 ), NORMAL_CHIP_SIZE ) ) );
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -3200 ,100 ), NORMAL_CHIP_SIZE ) ) );
 			_military->addEnemy( EnemyPtr( new EnemyFighter_1( Vector ( -3240 ,60 ), NORMAL_CHIP_SIZE ) ) );
+
 			_pop = true;
 		break;
 		case 4:
