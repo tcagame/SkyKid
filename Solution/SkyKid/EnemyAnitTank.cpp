@@ -3,14 +3,14 @@
 #include "Image.h"
 #include "Drawer.h"
 
-const int MOVE_SPEED = 5;
+const int MOVE_SPEED = 2;
 
 EnemyAnitTank::EnemyAnitTank( const Vector &pos, const int chip_size ) :
 Enemy( pos, SMALL_CHIP_SIZE ),
 _tx( 0 ),
 _ty( 5 ),
 _time( 0 ),
-_vec( 3 , 0 ) {
+_vec( 5 , 0 ) {
 	DrawerPtr drawer = Drawer::getTask( );
 	_image = drawer->createImage( "enemy.png" );
 }

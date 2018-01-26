@@ -25,10 +25,10 @@ EnemyInterceptionBalloon::~EnemyInterceptionBalloon( ) {
 void EnemyInterceptionBalloon::act( ) {
 	_act_count++;
 	if ( _act_count < FALLING_COUNT ) {
-		_vec.x += 0.05;
+		_vec.x -= 0.05;
 	}
 	if ( _act_count > FALLING_COUNT ) {
-		_vec.x -= 0.05;
+		_vec.x += 0.05;
 	}
 	if( _act_count > FALLING_COUNT * 3 ) {
 		_vec.x += 0.1;
